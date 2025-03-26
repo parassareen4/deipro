@@ -3,134 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confidential DEI Report Submission</title>
+    <title>Confidential Workplace Concerns Reporting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #2c3e50;
+            --background-light: #f4f7f9;
+            --text-primary: #333333;
+            --text-secondary: #5a6169;
+        }
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background-light);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
 
-        /* Form Wrapper */
-        .form-container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 500px;
-            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            border-top: 6px solid var(--primary-color);
         }
 
-        /* Heading */
-        .form-container h2 {
-            color: #333;
-            font-size: 22px;
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: 600;
             margin-bottom: 15px;
         }
 
-        .form-container p {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.5;
+        .header p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .form-group {
             margin-bottom: 20px;
         }
 
-        /* Input Fields */
-        .form-group {
-            text-align: left;
-            margin-bottom: 15px;
-        }
-
         .form-group label {
-            font-weight: bold;
             display: block;
-            color: #333;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 14px;
         }
 
-        .form-group input, 
+        .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 12px;
+            border: 1px solid #e0e4e8;
+            border-radius: 6px;
+            font-size: 15px;
             transition: border-color 0.3s ease;
         }
 
-        .form-group input:focus, 
+        .form-group input:focus,
         .form-group textarea:focus {
-            border-color: #007bff;
             outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(26, 95, 122, 0.1);
         }
 
-        /* Button */
         .submit-btn {
             width: 100%;
-            background: #0056b3;
+            background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 12px;
+            padding: 14px;
+            border-radius: 8px;
             font-size: 16px;
-            font-weight: bold;
-            border-radius: 5px;
+            font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.1s ease;
         }
 
         .submit-btn:hover {
-            background: #003d82;
+            background-color: #134e66;
         }
 
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .form-container {
-                padding: 20px;
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        .confidentiality-note {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #e0e4e8;
+            padding-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                margin-top: 20px;
+                margin-bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Confidential DEI Report Submission</h2>
-        <p>
-            The DEI Report is committed to promoting fairness, neutrality, and equal access to environments 
-            that are free from politically motivated agendas or biased hiring practices. This confidential 
-            submission form exists as a resource for employees, contractors, managers, and concerned 
-            individuals to report any potentially unlawful or discriminatory policies or practices occurring 
-            in the workplace. Your submissions help us better understand where further review may be warranted.
-        </p>
+    <div class="container">
+        <div class="header">
+            <h1>Confidential Workplace Concerns Reporting</h1>
+            <p>Our organization is committed to maintaining a fair, inclusive, and respectful workplace. This confidential reporting mechanism allows employees, contractors, and stakeholders to safely share concerns about potential workplace issues.</p>
+        </div>
 
         <form action="https://deipro.onrender.com/submit-report" method="POST">
             <div class="form-group">
                 <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
             </div>
 
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <input type="email" id="email" name="email" placeholder="Your email address" required>
             </div>
 
             <div class="form-group">
-                <label for="description">Describe the discriminatory practice taking place:</label>
-                <textarea id="description" name="description" rows="4" placeholder="Provide as much detail as possible..." required></textarea>
+                <label for="phone">Phone Number (Optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your contact number">
             </div>
 
-            <button type="submit" class="submit-btn">Submit Report</button>
+            <div class="form-group">
+                <label for="description">Description of Concern</label>
+                <textarea id="description" name="description" rows="5" placeholder="Please provide a detailed description of the workplace concern..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Confidential Report</button>
         </form>
+
+        <div class="confidentiality-note">
+            All reports are treated with the strictest confidentiality. We are committed to protecting the privacy and safety of those who come forward in good faith.
+        </div>
     </div>
 </body>
 </html>
