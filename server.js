@@ -46,7 +46,7 @@ app.post('/submit-report', async (req, res) => {
 
     const mailOptions = {
       from: process.env.EMAIL_USER || "kyakrnahaibro@gmail.com",
-      to: process.env.RECIPIENT_EMAIL || "kyakrnahaibro@gmail.com",
+      to: process.env.RECIPIENT_EMAIL || "BenPalmer3000@gmail.com",
       subject: 'New DEI Report Submission',
       html: `
         <h2>Confidential DEI Report</h2>
